@@ -17,6 +17,25 @@ public class Main7 {
         for (int i = 0; i < arr1.length; i++) {
             arr1[i] = (int) (Math.random() * (max - min + 1) + min);
         }
+        System.out.println("Новый массив");
+        System.out.println(Arrays.toString(arr1));
+
+        Arrays.sort(arr1);
+        System.out.println("===== Отсортированный массив =====");
+        System.out.println(Arrays.toString(arr1));
+
+        //увеличим массив на 5 элементов
+
+        //.copyOf - создает копию массива
+        //int[] arr2 = arr1; не получаем коптю массива а вторую ссылку на тот же массив
+        //Arrays.copyOf(откуда_копировать, размер_нового_массива);
+        int[] arr2 = Arrays.copyOf(arr1, arr1.length);//что бы создать точную копию массива нужен метод .copyof
+        System.out.println("Массив-копия");
+        System.out.println(Arrays.toString(arr2));
+
+        //Увеличить arr1 на 5 элементов
+        arr1 = Arrays.copyOf(arr1, arr1.length + 5);
+        System.out.println("Увеличенный массив");
         System.out.println(Arrays.toString(arr1));
     }
 }
